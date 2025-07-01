@@ -23,9 +23,14 @@ export default function Flags() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(url);
-      const data = await response.json();
-      setFlags(data);
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            setFlags(data);
+        } catch (error) {
+            console.error("Error fetching flags:", error);
+        }
+      
     };
     fetchData();
   }, []);
