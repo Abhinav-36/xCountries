@@ -28,7 +28,7 @@ export default function Flags() {
             const data = await response.json();
             setFlags(data);
         } catch (error) {
-            console.error("Error fetching flags:", error);
+            console.error("Error fetching data:", error);
         }
       
     };
